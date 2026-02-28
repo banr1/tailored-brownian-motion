@@ -22,5 +22,9 @@ git = "https://github.com/PatrickMassot/checkdecls.git"
 name = "subverso"
 git = "https://github.com/leanprover/subverso"
 
+[[require]]
+name = "lean-atlas"
+path = "../lean-atlas"
+
 [[lean_lib]]
 name = "BrownianMotion"
