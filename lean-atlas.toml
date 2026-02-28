@@ -189,4 +189,4 @@ name = "BrownianMotion.StochasticIntegral.SquareIntegrable"
 name = "BrownianMotion.StochasticIntegral.UniformIntegrable"
 
 [atlas]
-root = "../lean-atlas"
+root = "../lean-atlas-for-brownian-motion"
