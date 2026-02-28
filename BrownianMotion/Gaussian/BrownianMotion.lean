@@ -7,6 +7,7 @@ import BrownianMotion.Continuity.KolmogorovChentsov
 import BrownianMotion.Gaussian.GaussianProcess
 import BrownianMotion.Gaussian.Moment
 import BrownianMotion.Gaussian.ProjectiveLimit
+import LeanAtlas
 import Mathlib.Probability.Independence.BoundedContinuousFunction
 import Mathlib.Topology.ContinuousMap.SecondCountableSpace
 import Mathlib.Probability.ConditionalExpectation
@@ -831,6 +832,7 @@ lemma memHolder_brownian (ω : ℝ≥0 → ℝ) (t : ℝ≥0) (β : ℝ≥0) (h�
 lemma continuous_brownian (ω : ℝ≥0 → ℝ) : Continuous (brownian · ω) :=
   IsPreBrownian.continuous_mk ω
 
+@[formalMeta "Brownian motion" "Construction of Brownian motion with continuous sample paths" mainTheorem]
 instance IsBrownian_brownian : IsBrownian brownian gaussianLimit :=
   IsPreBrownian.isBrownian_mk
 
