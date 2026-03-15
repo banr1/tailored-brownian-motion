@@ -256,6 +256,8 @@ lemma IsPreBrownian.covariance_fun_eval [h : IsPreBrownian X P] (s t : ℝ≥0) 
     cov[fun ω ↦ X s ω, fun ω ↦ X t ω; P] = min s t :=
   h.covariance_eval s t
 
+@[formalMeta "Kolmogorov moment condition for pre-Brownian motion"
+  "A pre-Brownian process satisfies the Kolmogorov moment condition" mainTheorem]
 lemma IsPreBrownian.isAEKolmogorovProcess {n : ℕ} (hn : 0 < n) [h : IsPreBrownian X P] :
     IsAEKolmogorovProcess X P (2 * n) n (Nat.doubleFactorial (2 * n - 1)) := by
   let Y t ω := (h.aemeasurable t).mk (X t) ω
@@ -290,6 +292,8 @@ lemma IsPreBrownian.isAEKolmogorovProcess {n : ℕ} (hn : 0 < n) [h : IsPreBrown
     exact IsGaussian.memLp_id _ _ (ENNReal.natCast_ne_top (2 * n))
   · exact ae_of_all _ fun _ ↦ by positivity
 
+@[formalMeta "Continuous modification of pre-Brownian motion"
+  "A pre-Brownian process has a measurable, locally Hölder continuous modification" mainTheorem]
 /-- If `X` is a pre-Brownian process then there exists a modification of `X` which is measurable
 and locally β-Hölder for `0 < β < 1/2` (and thus continuous). See `IsPreBrownian.mk`. -/
 lemma IsPreBrownian.exists_continuous_modification [h : IsPreBrownian X P] :
@@ -343,6 +347,8 @@ lemma IsPreBrownian.continuous_mk [h : IsPreBrownian X P] (ω : Ω) :
     (NNReal.inv_lt_inv (by norm_num) (by norm_num))
   exact (h.continuousOn (by norm_num)).continuousAt hu_mem
 
+@[formalMeta "Independent increments of pre-Brownian motion"
+  "A pre-Brownian process has independent increments" mainTheorem]
 lemma IsPreBrownian.hasIndepIncrements [h : IsPreBrownian X P] : HasIndepIncrements X P := by
   have : IsProbabilityMeasure P := h.isGaussianProcess.isProbabilityMeasure
   refine fun n t ht ↦ h.isGaussianProcess.hasGaussianLaw_increments.iIndepFun_of_covariance_eq_zero

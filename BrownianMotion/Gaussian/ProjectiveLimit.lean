@@ -7,6 +7,7 @@ import BrownianMotion.Auxiliary.NNReal
 import BrownianMotion.Gaussian.GaussianProcess
 import BrownianMotion.Gaussian.MultivariateGaussian
 import KolmogorovExtension4.KolmogorovExtension
+import LeanAtlas
 import Mathlib.Analysis.InnerProductSpace.GramMatrix
 
 /-!
@@ -45,6 +46,8 @@ lemma brownianCovMatrix_submatrix {I J : Finset ℝ≥0} (hJI : J ⊆ I) :
     (brownianCovMatrix I).submatrix (fun i : J ↦ ⟨i.1, hJI i.2⟩) (fun i : J ↦ ⟨i.1, hJI i.2⟩) =
     brownianCovMatrix J := rfl
 
+@[formalMeta "Positive semi-definiteness of Brownian covariance"
+  "The Brownian covariance matrix (s, t) ↦ min(s, t) is positive semi-definite" mainTheorem]
 lemma posSemidef_brownianCovMatrix (I : Finset ℝ≥0) :
     (brownianCovMatrix I).PosSemidef := by
   have h : brownianCovMatrix I =
@@ -151,6 +154,9 @@ lemma hasLaw_eval_sub_eval_gaussianProjectiveFamily (I : Finset ℝ≥0) (s t : 
     · exact (IsGaussian.hasGaussianLaw_id.eval t).memLp_two
     · exact (IsGaussian.hasGaussianLaw_id.prodMk s t).sub
 
+@[formalMeta "Projectivity of Brownian finite-dimensional distributions"
+  "The family of finite-dimensional Gaussian measures with Brownian covariance is projective"
+  mainTheorem]
 lemma isProjectiveMeasureFamily_gaussianProjectiveFamily :
     IsProjectiveMeasureFamily (α := fun _ ↦ ℝ) gaussianProjectiveFamily := by
   intro I J hJI
