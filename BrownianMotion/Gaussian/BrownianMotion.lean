@@ -292,10 +292,10 @@ lemma IsPreBrownian.isAEKolmogorovProcess {n : ℕ} (hn : 0 < n) [h : IsPreBrown
     exact IsGaussian.memLp_id _ _ (ENNReal.natCast_ne_top (2 * n))
   · exact ae_of_all _ fun _ ↦ by positivity
 
-@[formalMeta "Continuous modification of pre-Brownian motion"
-  "A pre-Brownian process has a measurable, locally Hölder continuous modification" mainTheorem]
 /-- If `X` is a pre-Brownian process then there exists a modification of `X` which is measurable
 and locally β-Hölder for `0 < β < 1/2` (and thus continuous). See `IsPreBrownian.mk`. -/
+@[formalMeta "Continuous modification of pre-Brownian motion"
+  "A pre-Brownian process has a measurable, locally Hölder continuous modification" mainTheorem]
 lemma IsPreBrownian.exists_continuous_modification [h : IsPreBrownian X P] :
     ∃ Y : ℝ≥0 → Ω → ℝ, (∀ t, Measurable (Y t)) ∧ (∀ t, Y t =ᵐ[P] X t)
       ∧ ∀ ω t (β : ℝ≥0) (_ : 0 < β) (_ : β < ⨆ n, (((n + 2 : ℕ) : ℝ) - 1) / (2 * (n + 2 : ℕ))),
