@@ -24,7 +24,8 @@ git = "https://github.com/leanprover/subverso"
 
 [[require]]
 name = "lean-atlas"
-path = "../lean-atlas"
+git = "git@github.com:banr1/lean-atlas.git"
+rev = "main"
 
 [[lean_lib]]
 name = "BrownianMotion"
