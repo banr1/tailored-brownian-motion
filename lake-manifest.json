@@ -5,7 +5,7 @@
    "type": "git",
    "subDir": null,
    "scope": "",
-   "rev": "cf711ed3289523ffedc7a7d7a541e8a09060bc22",
+   "rev": "ae574aff0658cfd2c619cfd9036824ff0468e8db",
    "name": "«lean-atlas»",
    "manifestFile": "lake-manifest.json",
    "inputRev": "main",

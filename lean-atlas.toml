@@ -1,6 +1,0 @@
-[project]
-name = "BrownianMotion"
-namespace = "BrownianMotion"
-
-[atlas]
-# root is auto-discovered from .lake/packages/lean-atlas when using git dependency
